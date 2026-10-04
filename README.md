@@ -1,5 +1,5 @@
 # fwa-claims-pipeline
-IQR anomaly detection pipeline for healthcare claims and FWA identification in Python.
+A Python-based IQR anomaly detection pipeline for healthcare claims and FWA identification.
 
 ### Executive Summary
 In value-based care and HEOR, identifying revenue leakage requires separating routine clinical variance from true Fraud, Waste, and Abuse (FWA). This project features an automated, deterministic Python data pipeline that ingests raw synthetic healthcare claims (50,000 records), applies Interquartile Range (IQR) algorithms to detect billing anomalies, and calculates patient clinical risk using HCC (Hierarchical Condition Category) weights. 
