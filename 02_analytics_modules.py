@@ -6,7 +6,7 @@ df = pd.read_csv(load_path)
 save_folder = r"C:\Users\damic\OneDrive\Desktop\Portfolio One files\\"
 
 # ---------------------------------------------------------
-# Module 1 (Verification Only - Optional)
+# Module 1 (Verification Only)
 # ---------------------------------------------------------
 dept_summary = df.groupby('department').agg(
     Total_Spend=('paid_amount', 'sum'),
@@ -66,7 +66,7 @@ gastro_anomaly_count = len(gastro_anomalies)
 print(f"\nTotal capital tied up in Gastroenterology anomalies: ${gastro_impact_total:,.2f}")
 print(f"Number of flagged Gastroenterology claims to audit: {gastro_anomaly_count}")
 
-# 4. Export all anomalies across the network for your Tableau scatterplot
+# 4. Export all anomalies across the network for Tableau scatterplot
 anomalies_df = df[df['is_anomaly'] == True]
 anomalies_df.to_csv(save_folder + 'm3_flagged_audits.csv', index=False)
 # ---------------------------------------------------------
