@@ -25,6 +25,6 @@ The Python pipeline executes a multi-module analytical framework in a single pas
 * **06. Provider Penalty Box:** Aggregates FWA flags by Provider ID to generate a targeted audit list for compliance and revenue integrity teams.
 
 ### Key Findings & Business Impact
-* **Targeted Revenue Leakage:** The IQR algorithm bypassed 49,000 routine hospital visits to pinpoint exactly 245 anomalous Gastroenterology claims, quantifying over $3.6M in auditable waste without relying on black-box machine learning models.
+* **Targeted Revenue Leakage:** The IQR algorithm bypassed 49,000 routine hospital visits to pinpoint exactly 245 anomalous Gastroenterology claims, quantifying over $3.6M in auditable waste without relying on machine learning models.
 * **Actionable Provider Audits:** The Provider Scorecard isolated specific actors (e.g., PR0238, PR0078) driving the highest volume of outlier claims, enabling immediate compliance intervention.
 * **Operational Efficiency:** The Utilization Quadrant successfully identified low-risk patients with 3+ ER visits, providing care management teams with a deterministic call list to reduce unnecessary hospital utilization.
