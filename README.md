@@ -6,7 +6,7 @@ In value-based care and HEOR, identifying revenue leakage requires separating ro
 
 The pipeline outputs directly to a Tableau executive dashboard, successfully isolating a highly concentrated pocket of financial risk: **$3,627,282.57 in tied-up capital across 245 flagged claims in the Gastroenterology department.**
 
-
+<img width="1909" height="856" alt="Image" src="https://github.com/user-attachments/assets/b6e54f91-549f-44a4-8708-5ddd6679b751" />
 
 
 ### Tech Stack
