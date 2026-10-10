@@ -1,30 +1,30 @@
-# fwa-claims-pipeline
-A Python-based IQR anomaly detection pipeline for healthcare claims and FWA identification.
+# Healthcare Claims Analytics & Transparent FWA Detection Pipeline
 
-### Executive Summary
-In value-based care and HEOR, identifying revenue leakage requires separating routine clinical variance from true Fraud, Waste, and Abuse (FWA). This project features an automated, deterministic Python data pipeline that ingests raw synthetic healthcare claims (50,000 records), applies Interquartile Range (IQR) algorithms to detect billing anomalies, and calculates patient clinical risk using HCC (Hierarchical Condition Category) weights. 
+**Author:** Greg D'Amico  
+**Articles & Technical Breakdown:** [Catching a $3.6 Million Leak (Medium)](https://medium.com/@gregdamico82)
 
-The pipeline outputs directly to a Tableau executive dashboard, successfully isolating a highly concentrated pocket of financial risk: **$3,627,282.57 in tied-up capital across 245 flagged claims in the Gastroenterology department.**
+## Executive Summary
+Advanced analytics in healthcare compliance often operate as a "black box," making it impossible to legally or financially defend machine learning findings during high-stakes audits or commercial disputes. This repository demonstrates an end-to-end, mathematically defensible pipeline for detecting Fraud, Waste, and Abuse (FWA) within medical claims. 
 
-<img width="1909" height="856" alt="Image" src="https://github.com/user-attachments/assets/b6e54f91-549f-44a4-8708-5ddd6679b751" />
+Processing a synthetic dataset of 50,000 medical claims, this project establishes a deterministic financial baseline using Interquartile Range (IQR) logic to quantify economic exposure, and subsequently deploys an Explainable Boosting Machine (EBM) to isolate complex multi-variable upcoding behaviors while maintaining 100% algorithmic transparency. 
 
+## Repository Architecture
 
-### Tech Stack
-* **Python (Pandas):** Data ingestion, synthetic anomaly injection, probabilistic risk scoring, and deterministic IQR outlier calculations.
-* **SQLite / CSV:** Flat-file database management and staging.
-* **Tableau:** Front-end executive visualization and operational targeting.
-
-### Methodology & Pipeline Architecture
-The Python pipeline executes a multi-module analytical framework in a single pass:
-
-* **01. Data Ingestion & Synthetic Generation:** Built a local SQLite database to ingest raw flat files, applying a Log-Normal distribution matrix via Pandas to accurately simulate the real-world financial skew of healthcare claims data before staging it for analysis.
-* **02. Baseline Department Variance:** Aggregates total spend and claim counts to establish normal clinical cost distributions (e.g., standard Evaluation & Management codes averaging ~$300/claim).
-* **03. Clinical Risk Scoring (RAF):** Maps diagnostic codes (ICD-10) to HCC weights to calculate individual Patient Risk Adjustment Factor (RAF) scores, identifying high-acuity populations.
-* **04. FWA Anomaly Detection:** Applies a strict Interquartile Range algorithm to flag highly abnormal claim amounts escaping the normal distribution (Upper Bound = $Q3 + 1.5 \times IQR$).
-* **05. Utilization Management:** Merges financial flags with clinical acuity to build a 4-quadrant targeting matrix, isolating "Frequent Flyer" patients (High ER utilization + Low Clinical Risk).
-* **06. Provider Penalty Box:** Aggregates FWA flags by Provider ID to generate a targeted audit list for compliance and revenue integrity teams.
-
-### Key Findings & Business Impact
-* **Targeted Revenue Leakage:** The IQR algorithm bypassed 49,000 routine hospital visits to pinpoint exactly 245 anomalous Gastroenterology claims, quantifying over $3.6M in auditable waste without relying on machine learning models.
-* **Actionable Provider Audits:** The Provider Scorecard isolated specific actors (e.g., PR0238, PR0078) driving the highest volume of outlier claims, enabling immediate compliance intervention.
-* **Operational Efficiency:** The Utilization Quadrant successfully identified low-risk patients with 3+ ER visits, providing care management teams with a deterministic call list to reduce unnecessary hospital utilization.
+```text
+fwa-claims-pipeline/
+│
+├── data/
+│   └── synthetic_claims_50k.csv             # 50,000-record dataset modeling real billing distributions
+│
+├── 01_IQR_Financial_Baseline/               # Phase 1: Deterministic Modeling
+│   ├── data_cleaning_and_prep.py            # SQLite ingestion and Pandas data cleaning
+│   ├── iqr_anomaly_detection.py             # Statistical outlier isolation algorithms
+│   ├── fwa_sql_queries.sql                  # Aggregation queries for Tableau export
+│   └── (Tableau Dashboards)                 # Visual proofs of $3.6M Gastroenterology variance
+│
+├── 02_EBM_WhiteBox_AI/                      # Phase 2: Transparent Machine Learning
+│   ├── ebm_pipeline.py                      # InterpretML training and scoring pipeline
+│   ├── requirements.txt                     # Environment dependencies
+│   └── (InterpretML Dashboards)             # Global Feature Importance & Local Waterfall charts
+│
+└── README.md                                # Master project documentation
