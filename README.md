@@ -14,7 +14,7 @@ Processing a synthetic dataset of 50,000 medical claims, this project establishe
 fwa-claims-pipeline/
 │
 ├── data/
-│   └── synthetic_claims_50k.csv             # 50,000-record dataset modeling real billing distributions
+│   └── claims_expanded.csv             # 50,000-record dataset modeling real billing distributions
 │
 ├── 01_IQR_Financial_Baseline/               # Phase 1: Deterministic Modeling
 │   ├── data_cleaning_and_prep.py            # SQLite ingestion and Pandas data cleaning
