@@ -17,9 +17,9 @@ fwa-claims-pipeline/
 │   └── claims_expanded.csv             # 50,000-record dataset modeling real billing distributions
 │
 ├── 01_IQR_Financial_Baseline/               # Phase 1: Deterministic Modeling
-│   ├── data_cleaning_and_prep.py            # SQLite ingestion and Pandas data cleaning
-│   ├── iqr_anomaly_detection.py             # Statistical outlier isolation algorithms
-│   ├── fwa_sql_queries.sql                  # Aggregation queries for Tableau export
+│   ├── 01_data_generation_pipleine.py       # SQLite ingestion and Pandas data cleaning
+│   ├── 02_analytics_modules.py              # Statistical outlier isolation algorithms
+│   ├── fwa_sql_queries.sql                  # SQL schema and raw claims data extraction
 │   └── (Tableau Dashboards)                 # Visual proofs of $3.6M Gastroenterology variance
 │
 ├── 02_EBM_WhiteBox_AI/                      # Phase 2: Transparent Machine Learning
