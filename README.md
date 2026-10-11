@@ -4,7 +4,7 @@
 **Articles & Technical Breakdown:** [Catching a $3.6 Million Leak (Medium)](https://medium.com/@gregdamico82)
 
 ## Executive Summary
-Advanced analytics in healthcare compliance often operate as a "black box," making it impossible to legally or financially defend machine learning findings during high-stakes audits or commercial disputes. This repository demonstrates an end-to-end, mathematically defensible pipeline for detecting Fraud, Waste, and Abuse (FWA) within medical claims. 
+Advanced analytics in healthcare compliance often operate as ‘black boxes,’ making machine‑learning findings impossible to legally or financially defend during high‑stakes audits or commercial disputes. This repository demonstrates an end-to-end, mathematically defensible pipeline for detecting Fraud, Waste, and Abuse (FWA) within medical claims. 
 
 Processing a synthetic dataset of 50,000 medical claims, this project establishes a deterministic financial baseline using Interquartile Range (IQR) logic to quantify economic exposure, and subsequently deploys an Explainable Boosting Machine (EBM) to isolate complex multi-variable upcoding behaviors while maintaining 100% algorithmic transparency. 
 
