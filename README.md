@@ -17,7 +17,7 @@ fwa-claims-pipeline/
 │   └── claims_expanded.csv             # 50,000-record dataset modeling real billing distributions
 │
 ├── 01_IQR_Financial_Baseline/               # Phase 1: Deterministic Modeling
-│   ├── 01_data_generation_pipleine.py       # SQLite ingestion and Pandas data cleaning
+│   ├── 01_data_generation_pipleine.py       # SQLite ingestion and log-normal financial variance modeling
 │   ├── 02_analytics_modules.py              # Statistical outlier isolation algorithms
 │   ├── build_clean_claims_table.sql         # ETL script for data cleaning, validation, and table creation
 │   ├── claims_expanded_clean.sql            # SQL dump containing raw claims data and insertion queries
