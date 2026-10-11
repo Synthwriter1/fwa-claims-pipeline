@@ -20,6 +20,7 @@ fwa-claims-pipeline/
 │   ├── 01_data_generation_pipleine.py       # SQLite ingestion and Pandas data cleaning
 │   ├── 02_analytics_modules.py              # Statistical outlier isolation algorithms
 │   ├── build_clean_claims_table.sql         # ETL script for data cleaning, validation, and table creation
+│   ├── claims_expanded_clean.sql            # SQL dump containing raw claims data and insertion queries
 │   └── (Tableau Dashboards)                 # Visual proofs of $3.6M Gastroenterology variance
 │
 ├── 02_EBM_WhiteBox_AI/                      # Phase 2: Transparent Machine Learning
