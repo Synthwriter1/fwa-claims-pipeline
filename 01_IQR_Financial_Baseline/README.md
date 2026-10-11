@@ -3,7 +3,7 @@
 This module establishes the financial baseline for the anomaly detection pipeline. Before applying complex machine learning, it is critical to use deterministic, mathematically auditable frameworks to quantify actual economic exposure.
 
 ## Files in this Module
-* `01_data_generation_pipeline.py`: Ingests the SQL database dump, standardizes the schema, and prepares the final dataset for statistical analysis.
+* `01_data_generation_pipeline.py`: Ingests the raw synthetic medical claims, applies log-normal distribution skews to model realistic financial variance, and prepares the dataset for statistical anomaly detection.
 * `02_analytics_modules.py`: Applies John Tukey's Interquartile Range (IQR) methodology to isolate high-variance cost clusters across provider specialties.
 * `build_clean_claims_table.sql`: ETL script for data cleaning, validation, and table creation.
 * `claims_expanded_clean.sql`: SQL dump containing raw claims data and insertion queries.
