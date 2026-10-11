@@ -19,9 +19,9 @@ CREATE TABLE claims_expanded (
 )
 ''')
 # Read the raw SQL text file
-with open(r"C:\Users\damic\OneDrive\Desktop\claims_expanded.sql", 'r') as file:
+with open(r"C:\Users\damic\OneDrive\Desktop\claims_expanded_clean.sql", 'r') as file:
     conn.executescript(file.read())
-df = pd.read_sql_query("SELECT * FROM claims_expanded", conn)
+df = pd.read_sql_query("SELECT * FROM claims_expanded_clean", conn)
 
 # Apply Realistic Baseline Costs (Log-Normal Distribution)
 np.random.seed(42)
